@@ -1,0 +1,21 @@
+{
+    "name": "coachdenis/idempotency-kata",
+    "type": "project",
+    "license": "MIT",
+    "scripts": {
+        "test": "phpunit --testdox"
+    },
+    "autoload": {
+        "psr-4": {
+            "Coachdenis\\IdempotencyKata\\": "src/",
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Denis Čahuk",
+            "email": "denis.cahuk@gmail.com"
+        }
+    ],
+    "require": {}
+}
