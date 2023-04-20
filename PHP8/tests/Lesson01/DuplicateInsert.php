@@ -20,13 +20,13 @@ class DuplicateInsert extends TestCase
     #[Before]
     protected function Instructions(): void
     {
-        $this->markTestSkipped();
+//        $this->markTestSkipped();
     }
 
     #[Before]
     protected function Gallery(): void
     {
-//        $this->gallery = new SolutionPhotoGallery(); // Replace with your implementation
+        $this->gallery = new SolutionPhotoGallery(); // Replace with your implementation
     }
 
     #[Test]
@@ -113,10 +113,10 @@ class DuplicateInsert extends TestCase
 
     private static function UPDATE_BANANA_IMAGE()
     {
-        $createdAt = new \DateTimeImmutable();
+        $updatedAt = new \DateTimeImmutable();
         $imageName = 'IMG_001.jpg';
         $imageBlob = base64_encode(self::RANDOM_STRING(1024));
 
-        return new CreateImage($createdAt, $imageName, $imageBlob);
+        return new UpdateImage($updatedAt, $imageName, $imageBlob);
     }
 }
