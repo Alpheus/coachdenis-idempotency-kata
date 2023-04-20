@@ -5,6 +5,7 @@ namespace Tests\Lesson01;
 use Coachdenis\IdempotencyKata\PhotoGallery\CreateImage;
 use Coachdenis\IdempotencyKata\PhotoGallery\PhotoGallery;
 use Coachdenis\IdempotencyKata\PhotoGallery\SolutionPhotoGallery;
+use Coachdenis\IdempotencyKata\PhotoGallery\UpdateImage;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\Attributes\Before;
 use PHPUnit\Framework\Attributes\Test;
@@ -20,13 +21,13 @@ class DuplicateInsert extends TestCase
     #[Before]
     protected function Instructions(): void
     {
-//        $this->markTestSkipped();
+        $this->markTestSkipped();
     }
 
     #[Before]
     protected function Gallery(): void
     {
-        $this->gallery = new SolutionPhotoGallery(); // Replace with your implementation
+//        $this->gallery = new SolutionPhotoGallery(); // Replace with your implementation
     }
 
     #[Test]
@@ -78,7 +79,7 @@ class DuplicateInsert extends TestCase
 
         $appliedCreate = $this->gallery->list()[$createImage->imageName];
 
-        Assert::assertEquals($appliedCreate->createdAt, $createImage->createdAt);
+        Assert::assertEquals($createImage->createdAt, $appliedCreate->createdAt);
     }
 
     private static function THE_BANANA_IMAGE(): CreateImage
